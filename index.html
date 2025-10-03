@@ -48,10 +48,17 @@
                         <div class="c-input" data-node-id="2010:61">
                             <label for="password" class="c-input__label">Password</label>
                             <div class="c-input__wrapper">
-                                <input type="password" id="password" class="c-input__field">
-                                <button type="button" class="c-input__icon" aria-label="Toggle password visibility" data-node-id="2013:98">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10 3.74802C5.83337 3.74802 2.27504 6.33968 0.833374 9.99802C2.27504 13.6563 5.83337 16.248 10 16.248C14.1667 16.248 17.725 13.6563 19.1667 9.99802C17.725 6.33968 14.1667 3.74802 10 3.74802ZM10 14.1647C7.70004 14.1647 5.83337 12.298 5.83337 9.99802C5.83337 7.69802 7.70004 5.83135 10 5.83135C12.3 5.83135 14.1667 7.69802 14.1667 9.99802C14.1667 12.298 12.3 14.1647 10 14.1647ZM10 7.49802C8.61671 7.49802 7.50004 8.61468 7.50004 9.99802C7.50004 11.3813 8.61671 12.498 10 12.498C11.3834 12.498 12.5 11.3813 12.5 9.99802C12.5 8.61468 11.3834 7.49802 10 7.49802Z" fill="#929599" />
+                                <input type="password" id="password" class="c-input__field" placeholder="Enter your password" data-node-id="I2010:61;2010:44">
+                                <button type="button" class="c-input__icon js-password-toggle" aria-label="Toggle password visibility" data-node-id="2013:98">
+                                    <!-- Eye icon (visible) -->
+                                    <svg class="c-input__icon-visible" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 3.74802C5.83337 3.74802 2.27504 6.33968 0.833374 9.99802C2.27504 13.6563 5.83337 16.248 10 16.248C14.1667 16.248 17.725 13.6563 19.1667 9.99802C17.725 6.33968 14.1667 3.74802 10 3.74802ZM10 14.1647C7.70004 14.1647 5.83337 12.298 5.83337 9.99802C5.83337 7.69802 7.70004 5.83135 10 5.83135C12.3 5.83135 14.1667 7.69802 14.1667 9.99802C14.1667 12.298 12.3 14.1647 10 14.1647ZM10 7.49802C8.61671 7.49802 7.50004 8.61468 7.50004 9.99802C7.50004 11.3813 8.61671 12.498 10 12.498C11.3834 12.498 12.5 11.3813 12.5 9.99802C12.5 8.61468 11.3834 7.49802 10 7.49802Z" fill="currentColor" />
+                                    </svg>
+                                    <!-- Eye icon with slash (hidden) -->
+                                    <svg class="c-input__icon-hidden" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 3.74802C5.83337 3.74802 2.27504 6.33968 0.833374 9.99802C2.27504 13.6563 5.83337 16.248 10 16.248C14.1667 16.248 17.725 13.6563 19.1667 9.99802C17.725 6.33968 14.1667 3.74802 10 3.74802ZM10 14.1647C7.70004 14.1647 5.83337 12.298 5.83337 9.99802C5.83337 7.69802 7.70004 5.83135 10 5.83135C12.3 5.83135 14.1667 7.69802 14.1667 9.99802C14.1667 12.298 12.3 14.1647 10 14.1647ZM10 7.49802C8.61671 7.49802 7.50004 8.61468 7.50004 9.99802C7.50004 11.3813 8.61671 12.498 10 12.498C11.3834 12.498 12.5 11.3813 12.5 9.99802C12.5 8.61468 11.3834 7.49802 10 7.49802Z" fill="currentColor" />
+                                        <!-- Diagonal slash line -->
+                                        <line x1="3" y1="17" x2="17" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                                     </svg>
                                 </button>
                             </div>
@@ -86,6 +93,35 @@
 
         </div>
     </div>
+
+    <script>
+        // Password visibility toggle functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const passwordToggle = document.querySelector('.js-password-toggle');
+            const passwordField = document.querySelector('#password');
+            const visibleIcon = document.querySelector('.c-input__icon-visible');
+            const hiddenIcon = document.querySelector('.c-input__icon-hidden');
+
+            if (passwordToggle && passwordField && visibleIcon && hiddenIcon) {
+                passwordToggle.addEventListener('click', function () {
+                    // Toggle password field type
+                    if (passwordField.type === 'password') {
+                        passwordField.type = 'text';
+                        // Show crossed-out eye icon
+                        visibleIcon.style.display = 'none';
+                        hiddenIcon.style.display = 'block';
+                        passwordToggle.setAttribute('aria-label', 'Hide password');
+                    } else {
+                        passwordField.type = 'password';
+                        // Show normal eye icon
+                        visibleIcon.style.display = 'block';
+                        hiddenIcon.style.display = 'none';
+                        passwordToggle.setAttribute('aria-label', 'Show password');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
