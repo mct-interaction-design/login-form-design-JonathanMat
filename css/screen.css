@@ -19,22 +19,22 @@
   --color-outline-default: rgba(51, 133, 255, 0.3);
   
   /* Spacing */
-  --space-3: 8px;
-  --space-4: 12px;
-  --space-5: 16px;
-  --space-6: 24px;
-  --space-9: 48px;
-  
+  --space-3: .5rem;
+  --space-4: .75rem;
+  --space-5: 1rem;
+  --space-6: 1.5rem;
+  --space-9: 3rem;
+
   /* Typography */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-size-small: 14px;
-  --font-size-medium: 16px;
-  --font-size-large: 18px;
+  --font-size-small: .875rem;
+  --font-size-medium: 1rem;
+  --font-size-large: 1.125rem;
   --line-height: 1;
   
   /* Border radius */
-  --radius-s: 3px;
-  --radius: 6px;
+  --radius-s: .1875rem;
+  --radius: .375rem;
 }
 
 @media (prefers-color-scheme: dark) {
