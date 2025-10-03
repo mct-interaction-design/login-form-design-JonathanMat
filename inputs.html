@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>Inputs</title>
     <link rel="stylesheet" href="css/screen.css">
 </head>
 
@@ -30,23 +30,12 @@
             <div class="c-form" data-node-id="2010:38">
                 <div class="c-form__content" data-node-id="2010:45">
 
-                    <!-- Title -->
-                    <h1 class="c-form__title" data-node-id="2008:34">Sign in to your account</h1>
+                    <div class="c-form__section">
+                        <h2 class="c-form__title c-form__title--left" data-node-id="2008:34">Text input</h2>
 
-                    <!-- Inputs Section -->
-                    <form class="c-form__inputs" data-node-id="2010:43">
-
-                        <!-- Username/Email Input -->
-                        <div class="c-input" data-node-id="2010:57">
-                            <label for="email" class="c-input__label" data-node-id="I2010:57;2010:36">Username or email address</label>
-                            <div class="c-input__wrapper" data-node-id="I2010:57;2010:37">
-                                <input type="email" id="email" class="c-input__field" placeholder="e.g. sir.martin.loth@howest.be" data-node-id="I2010:57;2010:44">
-                            </div>
-                        </div>
-
-                        <!-- Password Input -->
+                        <!-- Text input -->
                         <div class="c-input" data-node-id="2010:61">
-                            <label for="password" class="c-input__label">Password</label>
+                            <label for="password" class="c-input__label">Label</label>
                             <div class="c-input__wrapper">
                                 <input type="password" id="password" class="c-input__field" placeholder="Enter your password" data-node-id="I2010:61;2010:44">
                                 <button type="button" class="c-input__icon js-password-toggle" aria-label="Toggle password visibility" data-node-id="2013:98">
@@ -63,34 +52,32 @@
                                 </button>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Checkbox -->
-                        <div class="c-checkbox" data-node-id="2013:154">
-                            <div class="c-checkbox__wrapper" data-node-id="I2013:154;2059:82">
-                                <input type="checkbox" id="remember" class="c-checkbox__input">
+                    <div class="c-form__section">
+                        <h2 class="c-form__title c-form__title--left" data-node-id="2008:34">Select</h2>
+
+                        <div class="c-input">
+                            <label for="text" class="c-input__label">Label</label>
+                            <div class="c-input__wrapper">
+                                <div class="c-input__fullfield">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="c-input__icon c-input__icon--pointer" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 4.85434L12.6417 7.496L13.8167 6.321L10 2.496L6.17505 6.321L7.35838 7.496L10 4.85434ZM10 15.1377L7.35838 12.496L6.18338 13.671L10 17.496L13.825 13.671L12.6417 12.496L10 15.1377Z" fill="#929599" />
+                                    </svg>
+
+                                    <select id="text" class="c-input__field c-input__field--select">
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="option1">Option 1</option>
+                                        <option value="option2">Option 2</option>
+                                        <option value="option3">Option 3</option>
+                                    </select>
+                                </div>
                             </div>
-                            <label for="remember" class="c-checkbox__label" data-node-id="I2013:154;2028:208">Remember me</label>
                         </div>
+                    </div>
 
-                        <!-- Button and Forgot Password -->
-                        <div class="c-form__actions" data-node-id="2013:85">
-                            <button type="submit" class="c-button c-button--primary c-button--focused" data-node-id="2059:103">
-                                <span class="c-button__text" data-node-id="2339:114">Sign in</span>
-                            </button>
-                            <a href="#" class="c-link" data-node-id="2013:72">Forgot password?</a>
-                        </div>
-
-                    </form>
-                </div>
-
-                <!-- Bottom Section -->
-                <div class="c-form__footer" data-node-id="2013:78">
-                    <p class="c-form__signup" data-node-id="2013:77">
-                        Don't have an account? <a href="#" class="c-link">Create an account</a>
-                    </p>
                 </div>
             </div>
-
         </div>
     </div>
 

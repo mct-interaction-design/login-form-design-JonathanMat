@@ -197,6 +197,12 @@ body {
   gap: var(--space-9);
 }
 
+.c-form__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
 .c-form__title {
   font-family: var(--font-family);
   font-size: var(--font-size-large);
@@ -205,6 +211,10 @@ body {
   text-align: center;
   color: var(--color-normal);
   margin: 0;
+}
+
+.c-form__title--left {
+  text-align: left;
 }
 
 .c-form__inputs {
@@ -284,6 +294,12 @@ body {
   outline: none;
 }
 
+.c-input__field--select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .c-input__wrapper:focus-within {
   border-color: var(--color-border-brand);
   box-shadow: 0 0 0 2px var(--color-outline-default);
@@ -321,6 +337,11 @@ body {
   height: 100%;
   display: none;
   color: black;
+}
+
+.c-input__icon--pointer {
+  cursor: default;
+  pointer-events: none;
 }
 
 /*
