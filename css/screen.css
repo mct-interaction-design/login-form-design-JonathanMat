@@ -145,7 +145,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: var(--space-9);
-  width: 432px;
+  width: 27rem;
   max-width: 100%;
 }
 
@@ -156,8 +156,8 @@ body {
 */
 
 .c-logo {
-  width: 121.232px;
-  height: 23.996px;
+  width: 7.577rem;
+  height: 1.4997rem;
 }
 
 .c-logo__image {
@@ -243,7 +243,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  height: 72px;
+  height: 4.5rem;
 }
 
 .c-input__label {
@@ -294,8 +294,8 @@ body {
   right: var(--space-5);
   top: 50%;
   transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   border: none;
   background: transparent;
   color: var(--color-light);
@@ -344,11 +344,11 @@ body {
 }
 
 .c-checkbox__icon {
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   position: absolute;
-  top: -2px;
-  left: -2px;
+  top: -0.125rem;
+  left: -0.125rem;
 }
 
 .c-checkbox__label {
@@ -379,7 +379,7 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   width: 100%;
-  height: 48px;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
