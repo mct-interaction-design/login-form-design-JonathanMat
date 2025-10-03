@@ -3,7 +3,52 @@
 /*---------------------------------------*/
 
 :root {
-  /* CSS variables here */
+  color-scheme: light dark;
+
+  /* Design tokens from Figma */
+  --color-brand: #3385ff;
+  --color-normal: #1d2126;
+  --color-soft: #64676c;
+  --color-light: #929599;
+  --color-white: #ffffff;
+  --color-background-layer-1: #f2f4f7;
+  --color-background-layer-2: #ffffff;
+  --color-background-layer-3: #ffffff;
+  --color-border-normal: #e2e5e8;
+  --color-border-brand: #3385ff;
+  --color-outline-default: rgba(51, 133, 255, 0.3);
+  
+  /* Spacing */
+  --space-3: 8px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --space-6: 24px;
+  --space-9: 48px;
+  
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-size-small: 14px;
+  --font-size-medium: 16px;
+  --font-size-large: 18px;
+  --line-height: 1;
+  
+  /* Border radius */
+  --radius-s: 3px;
+  --radius: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-normal: #e1e3e6;
+    --color-soft: #a1a3a6;
+    --color-light: #c1c3c6;
+    --color-background-layer-1: #121416;
+    --color-background-layer-2: #1d2126;
+    --color-background-layer-3: #252a2f;
+    --color-border-normal: #2c3136;
+    --color-border-brand: #3385ff;
+    --color-outline-default: rgba(51, 133, 255, 0.3);
+  }
 }
 
 /*---------------------------------------/*
@@ -38,11 +83,17 @@ img {
 html {
   font-size: 100%;
   line-height: 1.5;
-  font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+  font-family: var(--font-family);
   scroll-behavior: smooth;
   /* anti aliasing */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-background-layer-1);
+  color: var(--color-normal);
+  min-height: 100vh;
 }
 
 /*
@@ -50,7 +101,7 @@ html {
 */
 
 ::selection {
-  background: hotpink;
+  background: var(--color-brand);
   color: white;
 }
 
@@ -74,11 +125,311 @@ html {
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
+
 /*
-    Component: Component name
+    Component: Login
     ---
-    Component description
+    Main login page layout
 */
+
+.c-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+}
+
+.c-login__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-9);
+  width: 432px;
+  max-width: 100%;
+}
+
+/*
+    Component: Logo
+    ---
+    Company logo styling
+*/
+
+.c-logo {
+  width: 121.232px;
+  height: 23.996px;
+}
+
+.c-logo__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.c-logo__path {
+  fill: var(--color-normal);
+}
+
+.c-logo__path2 {
+  fill: var(--color-normal);
+}
+
+/*
+    Component: Form
+    ---
+    Login form container
+*/
+
+.c-form {
+  background: var(--color-background-layer-2);
+  border-radius: var(--radius);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-form__content {
+  padding: var(--space-9);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+}
+
+.c-form__title {
+  font-family: var(--font-family);
+  font-size: var(--font-size-large);
+  font-weight: 500;
+  line-height: var(--line-height);
+  text-align: center;
+  color: var(--color-normal);
+  margin: 0;
+}
+
+.c-form__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.c-form__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.c-form__footer {
+  border-top: 1px solid var(--color-border-normal);
+  padding: var(--space-6) var(--space-9);
+  text-align: center;
+}
+
+.c-form__signup {
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height);
+  color: var(--color-light);
+  margin: 0;
+}
+
+/*
+    Component: Input
+    ---
+    Form input styling
+*/
+
+.c-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  height: 72px;
+}
+
+.c-input__label {
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height);
+  color: var(--color-soft);
+  font-weight: 400;
+}
+
+.c-input__wrapper {
+  position: relative;
+  background: var(--color-white);
+  border: 1px solid var(--color-border-normal);
+  border-radius: var(--radius-s);
+  flex: 1;
+}
+
+.c-input__field {
+  width: 100%;
+  height: 100%;
+  padding: var(--space-5);
+  padding-right: var(--space-9);
+  border: none;
+  background: transparent;
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height);
+  color: black;
+  font-weight: 400;
+}
+
+.c-input__field::placeholder {
+  color: var(--color-light);
+}
+
+.c-input__field:focus {
+  outline: none;
+}
+
+.c-input__wrapper:focus-within {
+  border-color: var(--color-border-brand);
+  box-shadow: 0 0 0 2px var(--color-outline-default);
+}
+
+.c-input__icon {
+  position: absolute;
+  right: var(--space-5);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: transparent;
+  color: var(--color-light);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.c-input__icon:hover {
+  color: var(--color-soft);
+}
+
+.c-input__icon-image {
+  width: 100%;
+  height: 100%;
+}
+
+/*
+    Component: Checkbox
+    ---
+    Custom checkbox styling
+*/
+
+.c-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.c-checkbox__wrapper {
+  position: relative;
+  width: auto;
+  height: 1rem;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+
+.c-checkbox__input {
+  width: 100%;
+  height: 100%;
+}
+
+.c-checkbox__icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+
+.c-checkbox__label {
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height);
+  color: var(--color-soft);
+  cursor: pointer;
+  font-weight: 400;
+  height: fit-content;
+}
+
+/*
+    Component: Button
+    ---
+    Button styling with different states
+*/
+
+.c-button {
+  padding: var(--space-4) var(--space-6);
+  border: none;
+  border-radius: var(--radius-s);
+  font-family: var(--font-family);
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+  line-height: var(--line-height-smaill);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.c-button__text {
+  color: var(--color-white);
+  font-family: var(--font-family);
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+  line-height: var(--line-height);
+}
+
+.c-button--primary {
+  background: var(--color-brand);
+  color: var(--color-white);
+}
+
+.c-button--primary:hover {
+  background: #2970e6;
+}
+
+.c-button--focused,
+.c-button--primary:focus {
+  box-shadow: 0 0 0 2px var(--color-outline-default);
+  outline: none;
+}
+
+/*
+    Component: Link
+    ---
+    Link styling
+*/
+
+.c-link {
+  color: var(--color-light);
+  text-decoration: underline;
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height);
+  text-align: center;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  font-weight: 400;
+}
+
+.c-link:hover {
+  color: var(--color-brand);
+}
 
 /*---------------------------------------/*
  # UTILITIES
